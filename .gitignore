@@ -1,0 +1,11 @@
+# STM32 CubeIDE
+**/Debug/
+**/Release/
+**/build/
+*.elf
+*.hex
+*.bin
+
+# Genel
+.DS_Store
+Thumbs.db
