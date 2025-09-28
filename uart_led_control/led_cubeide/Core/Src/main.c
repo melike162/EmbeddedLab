@@ -229,7 +229,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) // Callback for UART rec
         else if(rx_data[0] == '3') // If received '3'
         {
             HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-            uint8_t msg = '4'; // If received '4'
+            uint8_t msg = '4'; // Send '4' back
             HAL_UART_Transmit(&huart4, &msg, 1, 100);
             HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
             HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
@@ -238,7 +238,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) // Callback for UART rec
         else if(rx_data[0] == '5') // If received '5'
         {
              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-             uint8_t msg = '6'; // If received '6'
+             uint8_t msg = '6'; // Send '6' back
              HAL_UART_Transmit(&huart4, &msg, 1, 100);
              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
@@ -247,7 +247,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) // Callback for UART rec
         else if(rx_data[0] == '7') // If received '7'
         {
             HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-            uint8_t msg = '8'; // If received '8'
+            uint8_t msg = '8'; // Send '8' back
             HAL_UART_Transmit(&huart4, &msg, 1, 100);
             HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
             HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
