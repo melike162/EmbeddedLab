@@ -1,0 +1,21 @@
+# STM32 CubeIDE
+Debug/
+*.o
+*.d
+*.su
+*.elf
+*.map
+*.list
+*.bin
+*.hex
+
+# Visual Studio
+*.vs/
+*.user
+*.suo
+bin/
+obj/
+
+# Genel geçici dosyalar
+*.log
+*.tmp
