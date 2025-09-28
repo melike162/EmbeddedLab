@@ -49,7 +49,7 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 uint16_t lux=0;
 uint16_t pot=0;
-uint16_t rawValues[2];//buffer 16 bit
+uint16_t rawValues[2];
 char msg[20];
 /* USER CODE END PV */
 
@@ -105,7 +105,7 @@ int main(void)
   MX_ADC1_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)rawValues, 2);//DMA i baslatir
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)rawValues, 2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -115,8 +115,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  if (convCompleted) {          //sadece 0 = false, 0’dan farklı = true
-	          lux = (uint16_t) rawValues[0];       // verileri oku
+	  if (convCompleted) {          
+	          lux = (uint16_t) rawValues[0];       
 	          pot = (uint16_t) rawValues[1];
 
 	          sprintf(msg, "Light: %hu   ", lux);
@@ -126,22 +126,8 @@ int main(void)
 	          HAL_UART_Transmit(&huart2, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
 
 	          HAL_Delay(1000);
-	          convCompleted = 0;        // yeni ölçüm için bayrağı sıfırla
+	          convCompleted = 0;        
 	  }
-
-	  /*
-	  HAL_ADC_Start(&hadc1);
-	  HAL_ADC_PollForConversion(&hadc1, 20);// POOLİNG METTER
-	  lux=HAL_ADC_GetValue(&hadc1);//adc1 values store lux
-	  sprintf(msg,"Light: %hu \r\n", lux);
-	  HAL_UART_Transmit(&huart2, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
-
-	  if(lux<2000){
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-	  }else{
-		  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-	  }
-	  HAL_Delay(200);*/
   }
   /* USER CODE END 3 */
 }
