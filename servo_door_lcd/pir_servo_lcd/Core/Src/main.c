@@ -124,22 +124,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  /*
-	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 25);//right 2
-	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 50);//right
-	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 75);//stop
-	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 100);//left
-	  HAL_Delay(2000);
-	  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 125);//left 2
-	  HAL_Delay(2000);
-
-	  HAL_Delay(8000);
-	  */
-	  //servo
-	  //__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 50);
 	  //pir
 
 	  mantion = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); // Read PIR sensor
