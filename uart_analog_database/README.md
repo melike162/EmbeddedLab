@@ -9,6 +9,11 @@ This project demonstrates **analog data acquisition** using an **STM32F407VGT6**
 ### 1️⃣ STM32 CubeIDE Code (`analog_cubeide`)
 - Reads 2 channels using **ADC1** (e.g., Light sensor and Potentiometer).  
 - ADC values are continuously read using **DMA**.  
+- **ADC Settings:**  
+  - **Scan Conversion Mode:** ENABLE → Multi-channel scanning active  
+  - **Continuous Conversion Mode:** ENABLE → Continuous conversion active  
+  - **EOC Selection:** ADC_EOC_SEQ_CONV → "End of Conversion" triggers after each sequence  
+  - **Number of Conversions:** 2 → Total 2 channels read  
 - The acquired values are sent in a formatted way over **UART2**.  
   **Example format:** `Light: 123   Pot: 456\r\n`
 
