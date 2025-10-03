@@ -27,12 +27,6 @@ namespace real_time_logger
         public Form1()
         {
             InitializeComponent();
-            /*
-            formsPlot = new ScottPlot.WinForms.FormsPlot();
-            formsPlot.Location = new Point(506, 111);
-            formsPlot.Size = new Size(600, 461);
-            this.Controls.Add(formsPlot);
-            */
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -46,7 +40,6 @@ namespace real_time_logger
             UpdateComPortList();  // Populate COM port and baudrate lists
             DatabaseConnection(); // Open database connection
             LoadTableNames();     // Load table names into combo box
-            //PlotData();
         }
 
         private void DatabaseConnection()
@@ -56,7 +49,7 @@ namespace real_time_logger
                 if (conn == null)
                 {
                     // MySQL connection string
-                    string mySqlConnection = $"Server=localhost;Database=real_time_logger;User Id=root;Password=159357;Port=3306;";
+                    string mySqlConnection = $"Server=;Database=;User Id=;Password=;Port=;";//**********************fill in**********************
                     conn = new MySqlConnection(mySqlConnection);
                 }
 
@@ -133,7 +126,6 @@ namespace real_time_logger
                         dataY1[i] = Convert.ToDouble(dt.Rows[i]["sensor1"]); // Y1-axis = sensor1 column
                         dataY2[i] = Convert.ToDouble(dt.Rows[i]["sensor2"]); // Y2-axis = sensor2 column
                     }
-
                     PlotDataTable(dataX, dataY1, dataY2);// Plot the data
                 }
             }
@@ -141,7 +133,6 @@ namespace real_time_logger
             {
                 dgv_table.DataSource = null;// Clear DataGridView if no data
             }
-
         }
 
         private void PlotDataTable(double[] dataX, double[] dataY1, double[] dataY2)
@@ -160,27 +151,7 @@ namespace real_time_logger
 
             formsPlot1.Refresh(); // Refresh the plot
         }
-
-        private void PlotData()
-        {
-            // Sample data for testing
-            double[] dataX = { 1, 2, 3, 4, 5 };
-            double[] dataY1 = { 10, 20, 15, 25, 30 };
-            double[] dataY2 = { 5, 15, 10, 20, 25 };
-
-            // Plot sensor1
-            var scatter1 = formsPlot1.Plot.Add.Scatter(dataX, dataY1);
-            scatter1.Color = Colors.Red;
-            scatter1.LineWidth = 2;
-
-            // Plot sensor2
-            var scatter2 = formsPlot1.Plot.Add.Scatter(dataX, dataY2);
-            scatter2.Color = Colors.Blue;
-            scatter2.LineWidth = 2;
-
-            formsPlot1.Refresh(); // Refresh the plot
-        }
-
+        
         public DataTable getData(string query)
         {
             try
