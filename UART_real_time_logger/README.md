@@ -41,11 +41,13 @@ This project demonstrates **analog data acquisition** using an **STM32F407VGT6**
 
 ## Database Structure and Data
 
-- Table structure:  
-| id (INT) | sensor1 (INT) | sensor2 (INT) | time (TIMESTAMP) |  
-|-----------|---------------|---------------|-----------------|  
-| 1         | 123           | 456           | 2025-10-03 11:32:01 |  
-| 2         | 125           | 458           | 2025-10-03 11:32:02 |  
+## Table structure
+
+| id (INT) | sensor1 (INT) | sensor2 (INT) | time (TIMESTAMP)     |
+|----------|---------------|---------------|----------------------|
+| 1        | 123           | 456           | 2025-10-03 11:32:01 |
+| 2        | 125           | 458           | 2025-10-03 11:32:02 |
+  
 
 - `sensor1` → First ADC value from STM32 (e.g., Light sensor)  
 - `sensor2` → Second ADC value from STM32 (e.g., Potentiometer)  
