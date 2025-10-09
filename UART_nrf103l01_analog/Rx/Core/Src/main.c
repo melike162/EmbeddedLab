@@ -81,7 +81,7 @@ uint8_t data_R[PLD_SIZE]={0}; // Receive buffer
 uint8_t ack_R[PLD_SIZE]={0};  // Acknowledge buffer
 #endif
 
-//If not TX, delete******************************************************************
+
 uint8_t convCompleted=0;// Flag indicating ADC conversion completion
 // ADC conversion complete callback
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)//*****************
