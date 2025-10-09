@@ -64,7 +64,7 @@ This project enables wireless data communication between STM32 boards using NRF2
 
 **NRF24L01 driver files** (`NRF24.c`, `NRF24.h`, `NRF24_reg_addreses.h` and `NRF24_conf.h`) are located inside the 
   **`Drivers/nrf24/`** directory of the project structure.  
-Driver source reference: [https://www.youtube.com/watch?v=a--IXKcEwdQ](https://www.youtube.com/watch?v=a--IXKcEwdQ)
+Driver source reference: [https://github.com/developer328/stm32_hal_nrf24_library](https://github.com/developer328/stm32_hal_nrf24_library)
 
 ---
 
