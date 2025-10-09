@@ -1,6 +1,6 @@
 # STM32 & NRF24L01 Wireless Data Transmission Project
 
-This project enables wireless data communication between STM32 boards using NRF24L01 modules. Users can configure the board as a transmitter (TX) or receiver (RX) using a single codebase, with mode switching done simply by changing the `#define` directive.
+This project enables wireless data communication between STM32 boards using NRF24L01 modules. Users can configure the board as a transmitter (Tx) or receiver (Rx) using a single codebase, with mode switching done simply by changing the `#define` directive.
 
 ---
 
@@ -8,8 +8,8 @@ This project enables wireless data communication between STM32 boards using NRF2
 
 - **Easy mode switching:** By replacing `#define tx` with `#define rx` or vice versa, the same code works in the opposite mode.  
 - **Compatible boards:**  
-  - TX mode: STM32F407VFT6  
-  - RX mode: STM32F103C6T6A  
+  - TX mode: STM32F407VGTx 
+  - RX mode: STM32F103C6Tx  
 - **ADC-based data acquisition:** Light sensor and potentiometer values can be read and transmitted.  
 - **LED status indicator:** LED shows transmission/reception status.
 
@@ -17,7 +17,7 @@ This project enables wireless data communication between STM32 boards using NRF2
 
 ## Connections
 
-| Signal / Pin | STM32F407VGTx (TX) | STM32F103C6Tx (RX) | Description |
+| Signal / Pin | STM32F407VGTx (Tx) | STM32F103C6Tx (Rx) | Description |
 |--------------|------------------|-------------------|------------|
 | VCC  | 3.3V  | 3.3V | NRF24L01 power supply |
 | GND | GND | GND | Common ground |
@@ -50,9 +50,9 @@ This project enables wireless data communication between STM32 boards using NRF2
 1. Power the boards and connect the NRF24L01 modules.
 2. Select the desired mode in the code:
    ```c
-   #define tx // transmitter
+   #define Tx // transmitter
    // or
-   #define rx // receiver
+   #define Rx // receiver
 3. Compile and upload the code.
 4. The TX board reads sensor values and transmits them via NRF24L01.
 5. The RX board receives the data and sends it to the UART terminal or PC.
