@@ -60,6 +60,14 @@ This project enables wireless data communication between STM32 boards using NRF2
 
 ---
 
+## NRF24L01 Driver Source
+
+**NRF24L01 driver files** (`NRF24.c`, `NRF24.h`, `NRF24_reg_addreses.h` and `NRF24_conf.h`) are located inside the 
+  **`Drivers/nrf24/`** directory of the project structure.  
+Driver source reference: [https://www.youtube.com/watch?v=a--IXKcEwdQ](https://www.youtube.com/watch?v=a--IXKcEwdQ)
+
+---
+
 ## Notes
 
 - The same code works for both TX and RX modes; only the #define directive needs to be changed.
@@ -67,5 +75,3 @@ This project enables wireless data communication between STM32 boards using NRF2
 - NRF24L01 channel, data rate, and CRC settings are configured in the code.
 - The boards support both continuous and single conversion modes depending on ADC settings.
 - Ensure proper 3.3V or 5V power supply to the NRF24L01 module for stable operation.
-- **NRF24L01 driver files** (`NRF24.c`, `NRF24.h`, `NRF24_reg_addreses.h` and `NRF24_conf.h`) are located inside the  
-  **`Drivers/nrf24/`** directory of the project structure.
