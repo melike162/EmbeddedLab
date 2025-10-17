@@ -151,35 +151,10 @@ int main(void)
 		  lcd_put_cur(1,0);
 		  lcd_send_string("CLOSING");
 		  HAL_Delay(1000);
-		  HAL_Delay(1000);
 		  __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, 75); // Stop servo
 		  movement=0;
 		  open_number_write(open_number); // Update LCD with open count
 	  }
-
-
-
-
-	  /*
-
-	  for(int i=0; i<128; i++){
-		  lcd_put_cur(row,col);
-		  lcd_send_data(i+48);
-		  col++;
-		  if(col>15){
-			  row++;
-			  col=0;
-		  }
-		  if(row>1){
-			  row=0;
-		  }
-		  HAL_Delay(250);
-	  }
-	  */
-
-
-
-
   }
   /* USER CODE END 3 */
 }
